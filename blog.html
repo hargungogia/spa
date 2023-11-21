@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff; 
+        }
+
+        header {
+           
+            color: #070707;
+            text-align: center;
+            padding: 1em;
+            cursor: pointer;
+            text-decoration: underline;color: #070707;
+        }
+header:hover{
+    text-decoration: none;
+    border: 1px solid black;
+   
+    transition: 1s;
+}
+        #blog-posts {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .post {
+            background-color: rgba(255, 255, 255, 0.8); 
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h2 {
+            color: #333;
+        }
+
+        .post p {
+            color: #666;
+        }
+
+        .date {
+            color: #888;
+            font-style: italic;
+        }
+
+        .post img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; 
+            margin-bottom: 10px;
+        }
+
+        #quiz-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #0b0b0b;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.8); 
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-color: #0b0b0b;
+        }
+        #quiz-link:hover{
+    border: 1px solid black;
+    transition: 1s;
+    text-decoration: underline;
+    cursor: pointer;
+    }
+    </style>
+    <title>Salon & Spa Blog</title>
+</head>
+<body>
+    <header>
+        <header>
+            <img id="logo" src="/Users/hargungogia/Desktop/18D99EFE-84F7-4793-A058-0F1D42B0F931.png" > 
+            
+          </header>
+        <h1>Salon & Spa Blog</h1>
+    </header>
+    <section id="blog-posts">
+        
+    </section>
+    <a id="quiz-link" href="quiz.html">Take the Frauma Spa & Salon Quiz<br> To get to know your skin better.<br> * Click here *</a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const blogPosts = [
+                { 
+                    title: 'Spa Day Bliss', 
+                    content: 'At the end of a particularly draining week, it’s only natural for our body and our mind to feel drained. <br> In these moments, it’s safe to say that anyone and everyone could benefit from a relaxing spa treatment.This is your time to unwind and relax. It’s your time to treat yourself to a rare and cherished moment of relaxation. It’s the time that you owe to yourself for all of the hard work and challenges you continue to face week-after-week.', 
+                    date: '2023-11-20',
+                    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA_7AlOKg4vRODmYjmaQjjknHXsGpEODsRBfaNUsafwi5ehw_0vi3nyybcLy2PZ-jcx-k&usqp=CAU' 
+                },
+                { 
+                    title: 'Trendy Hairstyles for the Season', 
+                    content: 'Let us guess, you are a woman bored with your current style and looking for 2023’s hair trends and <br>particularly for a fresh trendy haircut that will shake things up this year? Or possibly you are a hairstylist in search of strong hairspiration for your clients’ makeovers in 2023? Anyway, you happened to be in the right place at the right time!', 
+                    date: '2023-11-15',
+                    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlBnL7grcttjSGBYMn-7YLtq0p8CJlCSQCXA&usqp=CAU'  
+                },
+                
+            ];
+
+            
+            const blogPostsContainer = document.getElementById('blog-posts');
+            blogPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+
+                postElement.innerHTML = `
+                    <h2>${post.title}</h2>
+                    ${post.imageUrl ? `<img src="${post.imageUrl}" alt="${post.title}">` : ''}
+                    <p>${post.content}</p>
+                    <p class="date">${post.date}</p>
+                `;
+
+                blogPostsContainer.appendChild(postElement);
+            });
+        });
+    </script>
+     <footer>
+    
+        <p>&copy; Frauma Salon & Spa | Follow us on <a href="https://www.instagram.com/your_instagram_username/" target="_blank" rel="noopener noreferrer" style="color: aliceblue;">Instagram</style></a></p>
+    
+  </footer>
+</body>
+</html>

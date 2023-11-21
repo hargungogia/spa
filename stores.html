@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg') center/cover no-repeat; 
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        #products {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product-card {
+            width: 45%; /* Adjust as needed to leave space for margins and ensure two cards fit */
+            box-sizing: border-box; /* Include padding and border in the width calculation */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 3px solid #060505;
+            border-radius: 8px;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .buy-now-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: rgba(72, 173, 236, 0.778);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        
+    </style>
+    <title>Spa & Salon Products</title>
+</head>
+<body>
+    <header>
+        <img src="/Users/hargungogia/Desktop/18D99EFE-84F7-4793-A058-0F1D42B0F931.png">
+        <h1>Spa & Salon Products</h1>
+    </header>
+
+    <section id="products">
+        <!-- Product cards go here -->
+    </section>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" class="product-img" alt="">
+            <p id="modal-description"></p>
+            <a id="buy-now-modal" class="buy-now-btn" href="#" target="_blank">Buy Now</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const products = [
+                {
+                    name: "Frauma Shampoo",
+                    image: "https://eseller2u.com/cdn/shop/products/Beaute-Pacifique-Haarpflege-Extended-Performance-Conditioner-59882_7d6eb501-7102-408c-b13f-978952131af5_900x.jpg?v=1605141843" ,
+                    description: "Norish your hair with Frauma Shampoo."
+                },
+                {
+                    name: "Frauma Conditioner",
+                    image: "https://www.zentraldrogerie.de/media/image/product/192772/md/xmarken-beaute-pacifique-enriched-hydrating-hand-creme-50ml.jpg.pagespeed.ic.zjm18z-r6Z.jpg",
+                    description: "Get the best conditioner to make you hair shine."
+                },
+                {
+                    name: "Frauma Body Wash",
+                    image: "https://eseller2u.com/cdn/shop/products/Beaute-Pacifique-Haarpflege-Extended-Performance-Conditioner-59882_7d6eb501-7102-408c-b13f-978952131af5_900x.jpg?v=1605141843",
+                    description: "Luxurious Body Wash ."
+                },
+                {
+                    name: "Frauma Face Wash",
+                    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTE4LE8RgVS6BvOOV6dT33VtSpqiOqx4Z_P5SnfNI_JLMqWu8O5F6HbJkCizpkFmu8Xy4&usqp=CAU",
+                    description: "Get pimple clear skin with Frauma face wash."
+                },
+                {
+                    name: "Frauma Serum",
+                    image: "https://www.zentraldrogerie.de/media/image/product/192749/md/xmarken-beaute-pacifique-puffy-eyes-gel-pumpspender-15ml.jpg.pagespeed.ic.IgKgO6Ai-i.jpg",
+                    description: "Best serum for heat protection"
+                },
+                {
+                    name: "Frauma Hair Oil",
+                    image: "https://www.zentraldrogerie.de/media/image/product/192753/md/xmarken-beaute-pacifique-enriched-moisturizing-cream-all-skin-tube-50ml.jpg.pagespeed.ic.LUahubS2aI.jpg",
+                    description: " Frauma Hair oil for fast growth."
+                },
+                // Add more products as needed
+            ];
+
+            const productsContainer = document.getElementById("products");
+            const modal = document.getElementById("product-modal");
+            const modalTitle = document.getElementById("modal-title");
+            const modalImage = document.getElementById("modal-image");
+            const modalDescription = document.getElementById("modal-description");
+            const buyNowModal = document.getElementById("buy-now-modal");
+
+            products.forEach(product => {
+                const card = document.createElement("div");
+                card.className = "product-card";
+
+                const img = document.createElement("img");
+                img.src = product.image;
+                img.alt = product.name;
+                img.className = "product-img";
+
+                const name = document.createElement("h2");
+                name.textContent = product.name;
+
+                const description = document.createElement("p");
+                description.textContent = product.description;
+
+                const buyNowBtn = document.createElement("a");
+                buyNowBtn.href = "buynow.html"; 
+                buyNowBtn.textContent = "Buy Now";
+                buyNowBtn.className = "buy-now-btn";
+
+                card.appendChild(img);
+                card.appendChild(name);
+                card.appendChild(description);
+                card.appendChild(buyNowBtn);
+
+                card.addEventListener("click", function () {
+                    modalTitle.textContent = product.name;
+                    modalImage.src = product.image;
+                    modalImage.alt = product.name;
+                    modalDescription.textContent = product.description;
+                    buyNowModal.href = "buynow.html"; 
+                    modal.style.display = "block";
+                });
+
+                productsContainer.appendChild(card);
+            });
+
+            const closeModal = document.querySelector(".close");
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+     <footer>
+    
+        <p>&copy; Frauma Salon & Spa | Follow us on <a href="https://www.instagram.com/your_instagram_username/" target="_blank" rel="noopener noreferrer" style="color: aliceblue;">Instagram</style></a></p>
+    
+  </footer>
+</body>
+</html>

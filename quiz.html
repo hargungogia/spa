@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            background: url('https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg') center/cover no-repeat; 
+        }
+        #quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <title>Skin Quiz</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="/Users/hargungogia/Desktop/18D99EFE-84F7-4793-A058-0F1D42B0F931.png" > 
+        <h1> ❤️Frauma Salon & Spa Quiz❤️</h1>
+        
+      </header>
+   
+
+<div id="quiz-container">
+    <h2>Get to Know Your Skin Quiz</h2>
+
+    <div class="question" id="question1">
+        <p>1. What is the largest organ of the human body?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="0"> A. Heart</label>
+            <label><input type="radio" name="q1" value="0"> B. Liver</label>
+            <label><input type="radio" name="q1" value="4"> C. Skin <!-- Correct Option --></label>
+            <label><input type="radio" name="q1" value="0"> D. Lungs</label>
+        </div>
+    </div>
+
+    <div class="question" id="question2">
+        <p>2. What is the outermost layer of the skin called?</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="0"> A. Dermis</label>
+            <label><input type="radio" name="q2" value="4"> B. Epidermis <!-- Correct Option --></label>
+            <label><input type="radio" name="q2" value="0"> C. Hypodermis</label>
+            <label><input type="radio" name="q2" value="0"> D. Subcutis</label>
+        </div>
+    </div>
+
+    <div class="question" id="question3">
+        <p>3. What protein gives skin its flexibility and elasticity?</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="0"> A. Collagen</label>
+            <label><input type="radio" name="q3" value="4"> B. Elastin <!-- Correct Option --></label>
+            <label><input type="radio" name="q3" value="0"> C. Keratin</label>
+            <label><input type="radio" name="q3" value="0"> D. Melanin</label>
+        </div>
+    </div>
+
+    <div class="question" id="question4">
+        <p>4. What is the function of sebaceous glands in the skin?</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="4"> A. Produce sebum for skin lubrication <!-- Correct Option --></label>
+            <label><input type="radio" name="q4" value="0"> B. Produce sweat for temperature regulation</label>
+            <label><input type="radio" name="q4" value="0"> C. Produce melanin for skin color</label>
+            <label><input type="radio" name="q4" value="0"> D. Produce collagen for skin structure</label>
+        </div>
+    </div>
+
+    <div class="question" id="question5">
+        <p>5. Which vitamin is essential for the synthesis of collagen in the skin?</p>
+        <div class="options">
+            <label><input type="radio" name="q5" value="0"> A. Vitamin A</label>
+            <label><input type="radio" name="q5" value="4"> B. Vitamin C <!-- Correct Option --></label>
+            <label><input type="radio" name="q5" value="0"> C. Vitamin D</label>
+            <label><input type="radio" name="q5" value="0"> D. Vitamin E</label>
+        </div>
+    </div>
+
+    
+
+    <button onclick="calculateScore()">Submit</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateScore() {
+        // Calculate the total score
+        let score = 0;
+        for (let i = 1; i <= 8; i++) { 
+            const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedOption) {
+                score += parseInt(selectedOption.value);
+            }
+        }
+
+        const resultContainer = document.getElementById('result');
+        resultContainer.textContent = `Your score: ${score} out of 20`; 
+    }
+</script>
+<footer>
+    
+    <p>&copy; Frauma Salon & Spa | Follow us on <a href="https://www.instagram.com/your_instagram_username/" target="_blank" rel="noopener noreferrer" style="color: aliceblue;">Instagram</style></a></p>
+
+</footer>
+
+</body>
+</html>

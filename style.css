@@ -1,0 +1,352 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+font-family: 'Roboto', sans-serif;
+}
+
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg)
+    ;background-position: center; 
+    background-size: cover;
+    position: relative;
+}
+nav{
+   
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: right;
+}
+
+nav img{ 
+    width: 180px;
+
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: rgb(248, 242, 242);
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-links ul li::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    display: block;
+    background: #fba6e7;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 80%;
+}
+.text-box{
+    width: 90%;
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: aliceblue;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: aliceblue;
+    border: 3px solid white;
+    padding: 12px 34px;
+    font-size: 17 px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid black;
+    background: black;
+    transition: 1s;
+    }
+    
+    
+    @media(max-width: 700px){
+        .text-box h1{
+            font-size: 20px ;
+        }
+.nav-links{
+    font-size: 1px;
+}
+       
+    }
+
+    
+
+
+   
+    .services{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+       
+    }
+    h1{
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+       
+    }
+    p{
+        color:black;
+        font-size: 14px;
+    font-weight: 300;
+line-height: 22px;
+padding: 10px;
+text-align: left;
+}
+h3{text-align: left;}
+.wrapper{
+    padding: 5px;
+    max-width: 960px;
+    width:100%;
+    margin: 10px auto;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg)
+    ;background-position: center; max-width: 100%;
+    background-size: 100%;
+    position: relative;
+    color:black(1,1,1);
+    
+
+  
+}
+header{
+    padding: 0 15px;
+    text-align: center;
+    font-size: 21px;
+    color:#fff(1, 1, 1);
+}
+.columns{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 5px;
+    color:#fff;
+}
+p 
+{ color: #ddd;}
+h2 {color: #fff;}
+.column{
+    flex: 1;
+    margin: 2px;
+    padding: 10px;
+    color:rgb(248, 243, 243);
+    color: #ddd;
+}
+.bubble{
+    padding: 5px;
+    max-width: 960px;
+    width:95%;
+    margin: 20px auto;
+    color:rgb(240, 235, 235);
+}
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #2980b9;
+}
+
+header {
+      
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+  }
+
+  #hero-section {
+    text-align: center;
+    padding: 2em;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);
+    background-color: rgba(255, 255, 255, 0.739); /* Adjust transparency as needed */
+    color: #f4ecec;
+    font-size: larger;
+    
+  }
+
+  #hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #fff;
+  }
+
+  #about-section {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);
+      background-color: rgba(255, 255, 255, 0.497);
+    padding: 20px;
+    text-align: center;
+    font-size: larger;
+    
+  }
+
+  #team-section {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);
+      background-color: rgba(255, 255, 255, 0.738);
+    padding: 20px;
+    text-align: center;
+    color: #fff;}
+
+  #team-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #fff;
+  }
+
+  .team-member {
+    display: inline-block;
+    margin: 10px;
+    color: #fff;
+  }
+
+  .team-member img {
+    width: 150px;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  #video-section {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);
+      background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+  }
+
+  #video-section iframe {
+    width: 100%;
+    max-width: 570px;
+    height: 320px;
+    color: #fff;
+
+  }
+
+  #brand-partners-section {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);
+      background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+  #brand-partners-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #fff;
+  }
+
+  .brand-logo {
+    max-width: 150px;
+    margin: 15px;
+    color: #fff;
+  }
+
+  #awards-section {
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);     background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    color: #fff;
+    
+  }
+
+  #awards-section h2 { background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg)
+;      background-color: rgba(255, 255, 255, 0.8);
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #fff;
+  }
+
+  .award {
+    margin: 20px;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #fff
+    ;
+  }
+
+  #contact-section {
+    padding: 20px;
+    text-align: center;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(https://hdfreefoto.files.wordpress.com/2014/09/spa-3.jpg);
+    background-color: rgba(255, 255, 255, 0.8);
+    color:#fff;
+  }
+
+  #contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #fff;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #fff;
+  }
+
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  footer {
+    background-color: rgba(51, 51, 51, 0.991);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
